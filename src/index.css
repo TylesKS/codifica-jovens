@@ -1,0 +1,14 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+@layer base {
+  body {
+    @apply bg-black text-white font-sans overflow-x-hidden;
+  }
+}
+
+:root {
+  --color: rgb(144, 0, 255);
+  --color-hover: 123, 43, 214;
+}
