@@ -74,7 +74,7 @@ export function PartnershipSection() {
     id='partnership'
       className="
       scroll-mt-60
-        w-full relative z-10
+        w-full relative z-0
         mt-[12em] sm:mt-[20em]
         px-6 sm:px-20 py-24
         flex flex-col lg:flex-row

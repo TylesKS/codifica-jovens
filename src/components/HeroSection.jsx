@@ -14,7 +14,7 @@ function HeroSection() {
   return (
     <div 
       className="flex mt-30 flex-col lg:flex-row items-center justify-start min-h-[70vh] w-[37%] overflow-visible ml-8
-    max-sm:min-h-[20vh] max-sm:text-center  max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-20 relative max-sm:mt-50"
+    max-sm:min-h-[20vh] max-sm:text-center  max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-0 relative max-sm:mt-50"
     >
       <main>
         <h1 className="text-3xl font-thin">

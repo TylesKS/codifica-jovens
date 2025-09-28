@@ -7,6 +7,7 @@ import PartnershipSection from "./components/PartnershipSection";
 import ClassSection from "./components/ClassSection";
 import ImageGallery from "./components/ImageGallery"
 import About from "./components/About"
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Viewer />
       <ClassSection />
       <ImageGallery />
+      <Footer />
     </>
   )
 }

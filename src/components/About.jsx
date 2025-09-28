@@ -2,7 +2,7 @@ function About() {
   return (
     <div className="mt-80">
       <section
-        className="relative z-10 scroll-mt-70 w-[90%] mx-auto"
+        className="relative z-0 scroll-mt-70 w-[90%] mx-auto"
         id="about"
       >
         <h1 className="text-4xl mb-2">Sobre o Projeto Codifica Jovens</h1>
@@ -16,25 +16,16 @@ function About() {
         </div>
         <div className="flex justify-between max-sm:flex-col">
           <div className="w-[45%] max-sm:mx-auto max-sm:flex-col max-sm:w-[100%]">
-            <p className="text-1xl">
-              O projeto Codifica Jovens nasce de uma colaboração visionária
-              entre a Gazin e a Unipar (Universidade Paranaense), com o objetivo
-              de abrir portas e construir futuros promissores para jovens
-              talentos na área da tecnologia. Entendemos que a educação é o
-              principal motor do desenvolvimento e, ao unir a expertise de
-              mercado da Gazin com a excelência acadêmica da Unipar, criamos um
-              ambiente de aprendizado dinâmico, prático e alinhado com as
-              demandas do setor.
-            </p>
-            <p>
-              Este curso foi desenhado para ser uma jornada de imersão no
-              universo da programação e do desenvolvimento de sistemas. Aqui, os
-              alunos têm a oportunidade única de aprender com profissionais
-              atuantes e professores altamente qualificados, em uma estrutura
-              que combina teoria e prática de forma eficaz. As aulas são
-              projetadas para desafiar os estudantes a resolver problemas reais,
-              incentivando o pensamento crítico, a criatividade e o trabalho em
-              equipe.
+            <p className="text-2xl/snug">
+              O Codifica Jovens é a união da gigante <a href="https://www.gazin.com.br" target="_blank" rel="noopener noreferrer" className=" duration-150 hover:text-blue-500">Gazin</a> com a excelência
+              acadêmica da <a href="https://www.unipar.br" target="_blank" rel="noopener noreferrer" className=" duration-150 hover:text-red-500">Unipar</a>, uma parceria que transforma código em
+              carreira. Nossa missão é construir o futuro de jovens talentos da
+              tecnologia através de uma imersão total, onde você aprende
+              programação na prática e resolvendo desafios reais. Com aulas
+              ministradas por professores que são profissionais do mercado,
+              focamos no seu desenvolvimento completo, estimulando o pensamento
+              crítico, a criatividade e o trabalho em equipe que as empresas
+              valorizam.
             </p>
             <br></br>
           </div>
@@ -42,23 +33,16 @@ function About() {
             <h2 className="lg:hidden md:hidden sm:hidden text-3xl mb-5 font-extralight">
               Por que esta é uma grande oportunidade?
             </h2>
-            <p>
-              Mais do que um curso, o Codifica Jovens é um passaporte para o
-              futuro. Em um mercado tecnológico cada vez mais competitivo, o
-              projeto oferece um diferencial significativo para a carreira. O
-              programa foca não apenas no conhecimento técnico em programação e
-              desenvolvimento de software, mas também nas habilidades
-              comportamentais que são essenciais para o sucesso profissional,
-              preparando os jovens de forma completa.
-            </p>
-            <p>
-              A parceria com a Gazin proporciona aos alunos uma conexão direta
-              com o ambiente corporativo e uma perspectiva real dos desafios da
-              área. Essa é a chance de construir um networking valioso e de se
-              destacar para uma das grandes empresas do país. Ao final do curso,
-              os jovens saem mais preparados para o mercado, com uma experiência
-              educacional de alto nível, chancelada pela Unipar e pela Gazin,
-              prontos para inovar.
+            <p className="text-2xl/snug">
+              Mais que um curso, este é o seu passaporte para o sucesso. Em um
+              mercado competitivo, o Codifica Jovens é o seu diferencial, pois
+              unimos as melhores habilidades técnicas com as competências
+              comportamentais que fazem a diferença. Você terá uma conexão
+              direta com o ambiente corporativo da Gazin, construindo um
+              networking valioso desde o início para se destacar na carreira. Ao
+              final, você sai com uma experiência de alto nível e estará não
+              apenas preparado para o mercado, mas pronto para inovar como um
+              verdadeiro agente de transformação.
             </p>
           </div>
         </div>

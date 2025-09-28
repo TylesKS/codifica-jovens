@@ -2,7 +2,7 @@ import "boxicons/css/boxicons.min.css";
 
 function Header() {
   return (
-    <div className="top-0 w-full backdrop-blur-2xl flex justify-between items-center p-6 max-sm:justify-center z-30 fixed">
+    <div className="top-0 w-full backdrop-blur-2xl flex justify-between items-center p-6 max-sm:justify-center z-20 fixed">
       <nav className="duration-500 cursor-default select-none hover:text-[var(--color)] hover:cursor-pointer font-arial-black text-3xl text-white flex gap-1 flex-wrap md:text-5xl hover:border-2 hover:border-[rgba(var(--color-hover),0.45)] border-2 border-transparent rounded-lg px-2 py-1">
         <span className="text-[var(--color)] mt-0.5">{"<"}</span>
         <span className="">od</span>
