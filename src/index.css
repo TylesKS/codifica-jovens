@@ -12,3 +12,77 @@ html {
   --color: rgb(144, 0, 255);
   --color-hover: 123, 43, 214;
 }
+:root {
+  --header-h: 88px; /* ajuste aqui se seu header for maior/menor */
+  --accent: #8b3cff; /* cor principal (já usa --color no seu projeto) */
+}
+
+/* garante que âncoras não fiquem escondidas pelo header fixo */
+section { scroll-margin-top: var(--header-h); }
+
+/* partículas de fundo */
+.stars {
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 1200px 1200px, 800px 800px, 400px 400px;
+  background-position: 10% 20%, 40% 60%, 80% 30%;
+  opacity: 0.035;
+  animation: starsMove 30s linear infinite;
+}
+
+/* animação fade-up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 600ms cubic-bezier(.2,.9,.2,1) both; }
+
+/* efeito float do planeta */
+@keyframes floatY { 0%{ transform: translateY(0);} 50%{ transform: translateY(-10px);} 100%{ transform: translateY(0);} }
+.float-animate { animation: floatY 6s ease-in-out infinite; }
+
+/* shimmer no nome (leve) */
+@keyframes shimmer {
+  0%{ background-position: -200% 0; }
+  100%{ background-position: 200% 0; }
+}
+.text-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), var(--accent), rgba(255,255,255,0.05));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 300% 100%;
+  animation: shimmer 3.5s linear infinite;
+}
+
+/* foco visível melhorado */
+:focus { outline: none; }
+a:focus, button:focus { box-shadow: 0 0 0 6px rgba(139,60,255,0.12); border-radius: 8px; }
+
+/* estilos dos CTAs para deixar mais exclusivos */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.75rem;
+  border: 2px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+  color: white;
+  font-weight: 600;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-primary:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0.75rem;
+  border: 2px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  font-weight: 600;
+}
