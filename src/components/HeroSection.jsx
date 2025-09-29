@@ -12,7 +12,7 @@ function HeroSection() {
     }, 1000);
   };
   return (
-    <div 
+    <div
       className="flex mt-30 flex-col lg:flex-row items-center justify-start min-h-[70vh] w-[37%] overflow-visible ml-8
     max-sm:min-h-[20vh] max-sm:text-center  max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-0 relative max-sm:mt-50"
     >
@@ -44,21 +44,23 @@ function HeroSection() {
               />
             </a>
           </span>
+          <span className="text-light font-thin">
           <br />
           Codifica Jovens
           <br />
           Transformando talentos em desenvolvedores do futuro.
           <br />
           Parceria exclusiva Gazin & Unipar
+          </span>
           <div className="flex gap-8 max-sm:justify-around mt-10">
-            <a href="#gallery">
+            <a href="#classes">
               <button className="border-2 w-[5.2em] border-white bg-black text-white py-2 px-2 rounded cursor-pointer duration-300 hover:border-black hover:scale-105 hover:bg-white hover:text-black">
-                Turma
+                Aulas
               </button>
             </a>
-            <a href="#turma">
+            <a href="#gallery">
               <button className="border-2 w-[5.2em] border-black bg-white text-black py-2 px-2 rounded cursor-pointer duration-300 hover:border-white hover:scale-105 hover:text-white hover:bg-black">
-                Aulas
+                Turma
               </button>
             </a>
           </div>

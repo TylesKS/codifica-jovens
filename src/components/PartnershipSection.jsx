@@ -49,7 +49,7 @@ function PartnerCard({  foundedYear, description, logoSrc, altText, primaryColor
         boxShadow: `0 0 25px ${hexToRgba(primaryColor, 0.15)}`,
       }}
     ><a href={url} target="_blank" rel="noopener noreferrer">
-      <img src={logoSrc} alt={altText} className='w-36 mb-4' />
+      <img src={logoSrc} alt={altText} className='w-36 h-12 mb-4' />
       </a>
       <h2
         className="text-4xl font-bold drop-shadow-md transition-colors duration-300 group-hover:drop-shadow-xl"
@@ -57,7 +57,7 @@ function PartnerCard({  foundedYear, description, logoSrc, altText, primaryColor
       >
         {name}
       </h2>
-      <p className="mt-2 text-sm text-white/60 font-mono">
+      <p className="mt-2 text-lg text-white/60 font-mono">
         Fundada em {foundedYear}
       </p>
       <p className="mt-4 text-base text-white/80 leading-relaxed">
@@ -80,13 +80,13 @@ export function PartnershipSection() {
         flex flex-col lg:flex-row
         items-center justify-center
         gap-12 lg:gap-16
-        bg-gradient-to-b from-black via-slate-900/90 to-black
+        bg-gradient-to-b from-black/20 via-slate-900/90 to-black/20
       "
     >
       <PartnerCard {...partnersData[0]} />
 
       <div className="flex flex-col items-center text-white/80 my-4 lg:my-0">
-        <span className="uppercase text-xs tracking-widest font-light">Em parceria</span>
+        <span className="uppercase text-2xl tracking-widest font-light">Em parceria</span>
         <span
           className="text-6xl mt-2 transition-transform duration-300 hover:scale-125"
           role="img"

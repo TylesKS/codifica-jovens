@@ -1,10 +1,7 @@
 function About() {
   return (
     <div className="mt-80">
-      <section
-        className="relative z-0 scroll-mt-70 w-[90%] mx-auto"
-        id="about"
-      >
+      <section className="relative z-0 scroll-mt-70 w-[90%] mx-auto" id="about">
         <h1 className="text-4xl mb-2">Sobre o Projeto Codifica Jovens</h1>
         <div className="flex justify-between max-sm:flex-col">
           <h2 className="text-3xl mb-5 font-extralight">
@@ -17,15 +14,31 @@ function About() {
         <div className="flex justify-between max-sm:flex-col">
           <div className="w-[45%] max-sm:mx-auto max-sm:flex-col max-sm:w-[100%]">
             <p className="text-2xl/snug">
-              O Codifica Jovens é a união da gigante <a href="https://www.gazin.com.br" target="_blank" rel="noopener noreferrer" className=" duration-150 hover:text-blue-500">Gazin</a> com a excelência
-              acadêmica da <a href="https://www.unipar.br" target="_blank" rel="noopener noreferrer" className=" duration-150 hover:text-red-500">Unipar</a>, uma parceria que transforma código em
-              carreira. Nossa missão é construir o futuro de jovens talentos da
-              tecnologia através de uma imersão total, onde você aprende
-              programação na prática e resolvendo desafios reais. Com aulas
-              ministradas por professores que são profissionais do mercado,
-              focamos no seu desenvolvimento completo, estimulando o pensamento
-              crítico, a criatividade e o trabalho em equipe que as empresas
-              valorizam.
+              O Codifica Jovens é a união da gigante{" "}
+              <a
+                href="https://www.gazin.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" duration-150 hover:text-blue-500"
+              >
+                Gazin
+              </a>{" "}
+              com a excelência acadêmica da{" "}
+              <a
+                href="https://www.unipar.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" duration-150 hover:text-red-500"
+              >
+                Unipar
+              </a>
+              , uma parceria que transforma código em carreira. Nossa missão é
+              construir o futuro de jovens talentos da tecnologia através de uma
+              imersão total, onde você aprende programação na prática e
+              resolvendo desafios reais. Com aulas ministradas por professores
+              que são profissionais do mercado, focamos no seu desenvolvimento
+              completo, estimulando o pensamento crítico, a criatividade e o
+              trabalho em equipe que as empresas valorizam.
             </p>
             <br></br>
           </div>
