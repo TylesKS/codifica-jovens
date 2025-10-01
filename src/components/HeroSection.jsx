@@ -1,8 +1,8 @@
 function HeroSection() {
   return (
     <div
-      className="flex mt-30 flex-col lg:flex-row items-center justify-start min-h-[70vh] max-w-[40%] min-md:ml-8 overflow-visible min-lg:ml-32
-    max-sm:min-h-[20vh] max-sm:text-center  max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-40 relative max-sm:mt-50"
+      className="flex min-lg:mt-30 min-md:mt-50 flex-col lg:flex-row items-center justify-start min-h-[70vh] max-w-[40%] ml-12 overflow-visible min-lg:ml-28
+    max-sm:min-h-[20vh] max-sm:text-center max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-40 relative max-sm:mt-50"
     >
       <main>
         <h1 className="text-2xl font-normal">

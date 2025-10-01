@@ -107,7 +107,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col text-center mt-2">
           <h4 className="text-lg font-semibold mb-3">Navegação</h4>
           <nav className="flex flex-col gap-2 text-sm">
             <a href="#top" className="hover:text-[var(--color)] transition-colors">
@@ -124,14 +124,13 @@ export default function Footer() {
             </a>
           </nav>
 
-          <div className="mt-6 text-xs text-gray-400">
+          <div className="mt-6 text-xs text-gray-400 tex">
             <div>Rua Pedrelina Macedo e Silva, 100 - Centro, Douradina - PR</div>
             <div>Telefone: (44) 3663-8000</div>
           </div>
         </div>
 
-        {/* Contact Form Section */}
-        <div className="flex flex-col ">
+        <div className="flex flex-col mt-2">
           <h4 className="text-lg font-semibold mb-3 ">Entre em Contato</h4>
           <ContactForm />
         </div>

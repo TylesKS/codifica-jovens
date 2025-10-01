@@ -7,7 +7,7 @@ export default function Viewer() {
   return (
     <div
       className="
-                absolute right-[-15vw] w-[60em] h-[57em] mt-10 top-0 overflow-x-hidden z-10
+                absolute min-lg:right-[-15vw] min-lg:w-[60em] min-md:right-[-0em] min-md:w-[34em] min-md:top-60 min-lg:top-0  min-md:h-[28em] min-lg:h-[57em] min-lg:mt-10 top-0 overflow-x-hidden z-10
                 max-sm:relative max-sm:mx-auto max-sm:mt-0 max-sm:w-[20em] max-sm:h-[20em] max-sm:right-0
                 max-sm:hidden"
     >

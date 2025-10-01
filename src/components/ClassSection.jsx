@@ -9,7 +9,7 @@ function ClassSection() {
             <h1 className="text-center text-6xl py-8">
               Professores
             </h1>
-            <div className="grid grid-cols-2 grid-rows-11 gap-2 bg-slate-700/10">
+            <div className="grid grid-cols-2 grid-rows-11 gap-2 bg-transparent">
               <div className="row-span-6 justify-center flex items-center relative">
                 <img
                   src="/Eduarda.png"
