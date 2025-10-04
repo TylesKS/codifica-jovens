@@ -1,4 +1,3 @@
-// PartnershipSection.jsx (substitua o conteúdo atual por este)
 import React from "react";
 
 const partnersData = [
@@ -66,7 +65,7 @@ function PartnerCard({ name, foundedYear, description, logoSrc, altText, primary
 
 export function PartnershipSection() {
   return (
-    <section id="partnership" className="mt-120 scroll-mt-45 w-full px-6 sm:px-20 py-24 flex flex-col lg:flex-row items-center justify-center gap-12 bg-gradient-to-b from-black/20 via-slate-900/90 to-black/20">
+    <section id="partnership" className="scroll-mt-46 mt-80 w-full px-6 sm:px-20 py-24 flex flex-col lg:flex-row items-center justify-center gap-12 backdrop-blur-[0.1em] bg-gradient-to-b from-black/20 via-slate-900/90 to-black/20">
       <PartnerCard {...partnersData[0]} />
       <div className="flex flex-col items-center text-white/80 my-4 lg:my-0">
         <span className="uppercase text-2xl tracking-widest font-light">Em parceria</span>

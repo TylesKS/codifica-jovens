@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Viewer from "./components/3d/Viewer";
@@ -8,20 +9,30 @@ import ImageGallery from "./components/ImageGallery";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import ContactSection from "./components/ContactForm";
+import LoadingScreen from "./components/LoadingScreen";
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <ParticlesBG />
-      <div className="h-0 max-sm:w-[10rem] w-[40rem] absolute top-[30%] right-0 overflow-x-hidden shadow-[0_0_1600px_40px_#9000ff] -rotate-[40deg] z-0"></div>
-      <div className="h-0 max-sm:w-[10rem] w-[40rem] absolute top-[60%] right-0 overflow-x-hidden shadow-[0_0_1600px_40px_#9000ff] -rotate-[40deg] z-0"></div>
-      <Header />
-      <HeroSection />
-      <About />
-      <PartnershipSection />
-      <Viewer />
-      <ClassSection />
-      <ImageGallery />
-      <Footer />
+      {isLoading ? (
+        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <ParticlesBG />
+          <div className="h-0 max-sm:w-[10rem] w-[40rem] absolute top-[30%] right-0 overflow-x-hidden shadow-[0_0_1600px_40px_#9000ff] -rotate-[40deg] z-0"></div>
+          <div className="h-0 max-sm:w-[10rem] w-[40rem] absolute top-[60%] right-0 overflow-x-hidden shadow-[0_0_1600px_40px_#9000ff] -rotate-[40deg] z-0"></div>
+          <Header />
+          <HeroSection />
+          <About />
+          <PartnershipSection />
+          <Viewer />
+          <ClassSection />
+          <ImageGallery />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

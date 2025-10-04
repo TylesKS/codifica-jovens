@@ -1,8 +1,13 @@
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 @import "tailwindcss";
+
 html {
+  
   scroll-behavior: smooth;
 }
+
 @layer base {
+  section { scroll-margin-top: var(--header-h); } 
   body {
     @apply bg-black text-white font-sans overflow-x-hidden;
   }
@@ -13,14 +18,56 @@ html {
   --color-hover: 123, 43, 214;
 }
 :root {
-  --header-h: 88px; /* ajuste aqui se seu header for maior/menor */
-  --accent: #8b3cff; /* cor principal (já usa --color no seu projeto) */
+  --header-h: 8.75rem;
+  --accent: #8b3cff; 
+}
+/* Neon mais forte + animação pulsante */
+.hello-neon {
+  color: var(--color);
+  position: relative;
+  display: inline-block;
+  text-shadow:
+    0 0 6px rgba(124,58,237,1),
+    0 0 18px rgba(124,58,237,0.95),
+    0 0 36px rgba(99,102,241,0.9),
+    0 0 80px rgba(99,102,241,0.75),
+    0 0 160px rgba(124,58,237,0.55);
+  /* suaviza bordas do fluxo do texto */
+  -webkit-font-smoothing: antialiased;
+  animation: neonPulse 1.8s ease-in-out infinite;
 }
 
-/* garante que âncoras não fiquem escondidas pelo header fixo */
-section { scroll-margin-top: var(--header-h); }
 
-/* partículas de fundo */
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      0 0 8px rgba(124,58,237,0.95),
+      0 0 20px rgba(124,58,237,0.9),
+      0 0 40px rgba(99,102,241,0.85),
+      0 0 90px rgba(99,102,241,0.7),
+      0 0 140px rgba(124,58,237,0.45);
+    
+  }
+  50% {
+    text-shadow:
+      0 0 18px rgba(124,58,237,1),
+      0 0 36px rgba(124,58,237,0.98),
+      0 0 72px rgba(99,102,241,0.95),
+      0 0 160px rgba(99,102,241,0.85),
+      0 0 300px rgba(124,58,237,0.6);
+    
+  }
+  100% {
+    text-shadow:
+      0 0 8px rgba(124,58,237,0.95),
+      0 0 20px rgba(124,58,237,0.9),
+      0 0 40px rgba(99,102,241,0.85),
+      0 0 90px rgba(99,102,241,0.7),
+      0 0 140px rgba(124,58,237,0.45);
+    
+  }
+}
+
 .stars {
   background-image:
     radial-gradient(#fff 1px, transparent 1px),
@@ -32,18 +79,15 @@ section { scroll-margin-top: var(--header-h); }
   animation: starsMove 30s linear infinite;
 }
 
-/* animação fade-up */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .fade-up { animation: fadeUp 600ms cubic-bezier(.2,.9,.2,1) both; }
 
-/* efeito float do planeta */
 @keyframes floatY { 0%{ transform: translateY(0);} 50%{ transform: translateY(-10px);} 100%{ transform: translateY(0);} }
 .float-animate { animation: floatY 6s ease-in-out infinite; }
 
-/* shimmer no nome (leve) */
 @keyframes shimmer {
   0%{ background-position: -200% 0; }
   100%{ background-position: 200% 0; }
@@ -56,12 +100,6 @@ section { scroll-margin-top: var(--header-h); }
   background-size: 300% 100%;
   animation: shimmer 3.5s linear infinite;
 }
-
-/* foco visível melhorado */
-:focus { outline: none; }
-a:focus, button:focus { box-shadow: 0 0 0 6px rgba(139,60,255,0.12); border-radius: 8px; }
-
-/* estilos dos CTAs para deixar mais exclusivos */
 .btn-primary {
   display: inline-flex;
   align-items: center;

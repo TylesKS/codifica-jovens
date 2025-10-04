@@ -1,32 +1,49 @@
+import React, { useState, useEffect } from 'react';
+
 function HeroSection() {
+  const [name, setName] = useState('');
+  const finalName = "Victor Daniel";
+
+  useEffect(() => {
+    let i = 0;
+    const speed = 120;
+    const interval = setInterval(() => {
+      setName(finalName.slice(0, i + 1));
+      i++;
+      if (i >= finalName.length) {
+        clearInterval(interval);
+        setName(finalName);
+      }
+    }, speed);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
-      className="flex min-lg:mt-30 min-md:mt-50 flex-col lg:flex-row items-center justify-start min-h-[70vh] max-w-[40%] ml-12 overflow-visible min-lg:ml-28
+      className="flex min-lg:mt-30 min-md:mt-50 flex-col lg:flex-row items-center justify-start min-h-[70vh] max-w-[55%] ml-12 overflow-visible min-lg:ml-28
     max-sm:min-h-[20vh] max-sm:text-center max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-40 relative max-sm:mt-50"
     >
       <main>
         <h1 className="text-2xl font-normal">
-          Hello World!
+<span className="hello-neon">Hello World!</span>
           <br />
-          <span className="text-7xl font-black">
+          <h1 className="text-6xl sm:text-7xl font-black max-sm:w-80">
             Eu sou{" "}
             <a
-              className="bg-gradient-to-r from-violet-900 to-indigo-600 bg-clip-text hover:text-transparent duration-300"
+              className="bg-gradient-to-r from-violet-900 to-indigo-600 bg-clip-text hover:text-transparent duration-300 break-words"
               href="https://github.com/TylesKS"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Victor Daniel
+              {name}
             </a>
             ,
-          </span>
-          <span className="text-light font-thin">
+          </h1>
+          <span className="text-light font-thin ">
+            Apresento uma iniciativa transformadora para o futuro.
+            
             <br />
-            Codifica Jovens
-            <br />
-            Transformando talentos em desenvolvedores do futuro.
-            <br />
-            Parceria exclusiva Gazin & Unipar
+            Codifica Jovens. Transformando talentos em desenvolvedores do futuro.
           </span>
           <div className="flex gap-8 max-sm:justify-around mt-10">
 <a href="#classes">

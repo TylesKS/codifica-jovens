@@ -5,32 +5,32 @@ const images = [
   {
     id: 1,
     src: "/turmainiciosetembro.jpg",
-    alt: "Foto do dia 06/09 de Setembro. Aula de Robótica",
-    credit: "Victor",
+    alt: "Foto do dia 06 de Setembro. ",
+    credit: "Aula de Robótica",
   },
   {
     id: 2,
     src: "/turmalauana.jpg",
-    alt: "Foto do dia 27/09 de Setembro. Aula de Realidade Virtual e Aumentada",
-    credit: "Victor",
+    alt: "Selfie com a Lauana. Foto do dia 06 de Setembro. ",
+    credit: "Aula de Robótica",
   },
   {
     id: 3,
     src: "/Turma27-9.jpg",
-    alt: "Descrição da imagem 3",
-    credit: "Victor",
+    alt: "Foto do dia 27 de Setembro.",
+    credit: "Aula de Realidade Virtual e Aumentada",
   },
   {
     id: 4,
-    src: "/turmainiciosetembro.jpg",
-    alt: "Descrição da imagem 4",
-    credit: "RicardoMarconato, via Wikimedia Commons – CC BY-SA 4.0",
+    src: "/foto-27-9-2.jpg",
+    alt: "Foto do dia 27 de Setembro.",
+    credit: "Aula de Realidade Virtual e Aumentadan",
   },
   {
     id: 5,
-    src: "/turmainiciosetembro.jpg",
-    alt: "Descrição da imagem 5",
-    credit: "Suely Sanches, via Wikimedia Commons – CC BY-SA 4.0",
+    src: "/Placeholder.png",
+    alt: "",
+    credit: "Gazin",
   },
 ];
 
@@ -188,7 +188,7 @@ function ImageGallery() {
                   {currentImage.alt}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  Crédito: {currentImage.credit}
+                  Conteúdo do dia: {currentImage.credit}
                 </p>
               </div>
             </div>

@@ -8,47 +8,32 @@ function ContactForm() {
 
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
-
-  // prevSubmitting para detectar a transição submitting true -> false
   const prevSubmitting = useRef(false);
 
-  // wrapper para o submit: reseta mensagens visíveis antes de enviar
-  const onSubmit = (e) => {
-    // impede que a confirmação antiga fique visível durante novo envio
+const onSubmit = (e) => {
     setShowSuccess(false);
     setShowError(false);
-    // chama o handleSubmit do Formspree (ele é async internamente)
     return handleSubmit(e);
   };
-
-  // detecta quando a submissão terminou (true -> false)
   useEffect(() => {
     if (prevSubmitting.current && !state.submitting) {
-      // submissão terminou
       if (state.succeeded) {
-        // sucesso: limpa formulário, mostra mensagem e foca o campo
         formRef.current?.reset();
         setShowSuccess(true);
         setShowError(false);
-        // foco no email para novo envio
         setTimeout(() => emailRef.current?.focus(), 80);
-        // opcional: esconder a mensagem após 3s
         const t = setTimeout(() => setShowSuccess(false), 3000);
         return () => clearTimeout(t);
       } else if (state.errors && state.errors.length > 0) {
-        // erro: mostrar mensagem de erro resumida
         setShowError(true);
         setShowSuccess(false);
         const t = setTimeout(() => setShowError(false), 4000);
         return () => clearTimeout(t);
       } else {
-        // terminou mas sem sucesso nem erros (caso raro)
         setShowSuccess(false);
         setShowError(false);
       }
     }
-
-    // atualiza prevSubmitting para próxima mudança
     prevSubmitting.current = state.submitting;
   }, [state.submitting, state.succeeded, state.errors]);
 

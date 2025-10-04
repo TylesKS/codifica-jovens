@@ -30,7 +30,7 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="top-0 w-full backdrop-blur-2xl bg-black/30 flex justify-between items-center p-6 max-sm:justify-center z-50">
-        <nav className="duration-500 cursor-default select-none font-arial-black text-3xl text-white flex gap-1 flex-wrap md:text-5xl rounded-lg px-2 py-1">
+        <nav className="duration-500 cursor-default select-none font-arial-black text-3xl text-white flex gap-1 flex-wrap md:text-5xl rounded-sm px-2 py-1">
           <a href="#top" className="flex items-center gap-1">
         <div className="flex items-center border-2 border-transparent p-2 rounded-2xl duration-300 hover:border-[var(--color)]">
           {" "}

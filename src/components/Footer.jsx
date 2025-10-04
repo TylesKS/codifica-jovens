@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <div
       id="contact"
-      className="w-full p-10 bg-black text-white border-t border-[var(--color)] mt-70"
+      className="scroll-mt-5 w-full p-10 bg-black text-white border-t border-[var(--color)] mt-70"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="flex flex-col">
