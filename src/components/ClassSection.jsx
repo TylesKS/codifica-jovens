@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const professores = [
   {
@@ -12,22 +13,53 @@ const professores = [
       { nome: 'Lógica de Programação', data: '19/07', link: '/' },
       { nome: 'Lógica de Programação', data: '30/08', link: '/LogicadeProgramação30-08.rar' },
     ],
+    social: {
+      github: '#',
+      linkedin: 'https://www.linkedin.com/in/prof-msc-cleber-de-souza-relli-15179a42/', 
+      whatsapp: 'https://wa.me/554688126759', 
+    },
   },
   {
     id: 2,
     nome: 'Eduarda',
     imagem: '/Eduarda.png',
-    thumbnail: '/EduardaThumb.png', 
+    thumbnail: '/EduardaThumb.png',
     cargo: 'Professora de Robótica e Realidade Virtual e Aumentada',
     aulas: [
       { nome: 'Introdução à Robótica', data: '06/09', link: '/Robotica06-09.rar' },
       { nome: 'Realidade Virtual e Aumentada', data: '27/09', link: '/RealidadeAumentadaeVirtual-27-9.zip' },
       { nome: 'Realidade Virtual e Aumentada', data: '04/10', link: '/' },
     ],
+    social: {
+      github: '#',
+      linkedin: 'https://www.linkedin.com/in/eduardamaganhaalmeida/',
+      whatsapp: 'https://wa.me/554391921420',
+    },
   },
 ];
 
-function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, imagePosition = 'left' }) {
+function SocialIcon({ href, children, label }) {
+  const isDisabled = !href || href === '#';
+  return (
+    <a
+      href={isDisabled ? undefined : href}
+      onClick={(e) => isDisabled && e.preventDefault()}
+      target={isDisabled ? undefined : '_blank'}
+      rel={isDisabled ? undefined : 'noopener noreferrer'}
+      aria-label={label}
+      className={
+        `inline-flex items-center justify-center p-2 rounded-full transition-transform duration-200 ` +
+        (isDisabled
+          ? 'opacity-40 cursor-not-allowed bg-white/5'
+          : 'hover:scale-110 bg-white/5 hover:bg-white/10')
+      }
+    >
+      {children}
+    </a>
+  );
+}
+
+function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, imagePosition = 'left' }) {
   return (
     <div className={`w-[35em] max-w-2xl bg-[var(--color)]/10 border border-blue-500/30 rounded-2xl shadow-lg hover:scale-105 hover:shadow-blue-500/20 duration-300 transition-all ease-in-out overflow-hidden flex ${imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
       <div className=" relative w-2/5 max-sm:hidden">
@@ -99,6 +131,17 @@ function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, imagePosition = 
             );
           })}
         </div>
+        <div className="mt-6 flex items-center gap-3">
+          <SocialIcon href={social.github} label={`${nome} GitHub`}>
+            <FaGithub className="text-2xl text-white" />
+          </SocialIcon>
+          <SocialIcon href={social.linkedin} label={`${nome} LinkedIn`}>
+            <FaLinkedin className="text-2xl text-white" />
+          </SocialIcon>
+          <SocialIcon href={social.whatsapp} label={`${nome} WhatsApp`}>
+            <FaWhatsapp className="text-2xl text-white" />
+          </SocialIcon>
+        </div>
       </div>
     </div>
   );
@@ -120,6 +163,7 @@ function ClassSection() {
               thumbnail={professor.thumbnail}
               cargo={professor.cargo}
               aulas={professor.aulas}
+              social={professor.social}
               imagePosition={index % 2 === 0 ? 'right' : 'left'}
             />
           ))}
