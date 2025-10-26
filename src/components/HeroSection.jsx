@@ -20,7 +20,7 @@ function HeroSection() {
 
   return (
     <div
-      className="flex min-lg:mt-30 min-md:mt-50 flex-col lg:flex-row items-center justify-start min-h-[70vh] max-w-[55%] ml-12 overflow-visible min-lg:ml-28
+      className="flex min-lg:mt-30 min-md:mt-50 flex-col lg:flex-row items-center justify-start min-h-[70vh] max-w-[50%] ml-12 overflow-visible min-lg:ml-28
     max-sm:min-h-[20vh] max-sm:text-center max-sm:w-[calc(100%-2rem)] max-sm:mx-auto z-40 relative max-sm:mt-50"
     >
       <main>

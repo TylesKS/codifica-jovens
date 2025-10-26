@@ -24,14 +24,20 @@ const images = [
     id: 4,
     src: "/foto-27-9-2.jpg",
     alt: "Foto do dia 27 de Setembro.",
-    credit: "Aula de Realidade Virtual e Aumentadan",
+    credit: "Aula de Realidade Virtual e Aumentada",
   },
   {
     id: 5,
-    src: "/Placeholder.png",
-    alt: "",
-    credit: "Gazin",
+    src: "/Foto-04-10.jpg",
+    alt: "Foto do dia 04 de Outubro.",
+    credit: "Aula de Realidade Virtual e Aumentada",
   },
+  {
+    id: 6,
+    src: "",
+    alt:"",
+    credit: "",
+  }
 ];
 
 function ImageGallery() {

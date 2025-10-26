@@ -12,11 +12,13 @@ const professores = [
       { nome: 'Office: Word', data: '28/06', link: '/' },
       { nome: 'Lógica de Programação', data: '19/07', link: '/' },
       { nome: 'Lógica de Programação', data: '30/08', link: '/LogicadeProgramação30-08.rar' },
+      { nome: 'Ofice: Excel', data: '18/10', link: '' },
+      { nome: 'Ofice: Excel', data: '25/10', link: '' },
     ],
     social: {
       github: '#',
-      linkedin: 'https://www.linkedin.com/in/prof-msc-cleber-de-souza-relli-15179a42/', 
-      whatsapp: 'https://wa.me/554688126759', 
+      linkedin: 'https://www.linkedin.com/in/prof-msc-cleber-de-souza-relli-15179a42/',
+      whatsapp: 'https://wa.me/554688126759',
     },
   },
   {
@@ -28,7 +30,8 @@ const professores = [
     aulas: [
       { nome: 'Introdução à Robótica', data: '06/09', link: '/Robotica06-09.rar' },
       { nome: 'Realidade Virtual e Aumentada', data: '27/09', link: '/RealidadeAumentadaeVirtual-27-9.zip' },
-      { nome: 'Realidade Virtual e Aumentada', data: '04/10', link: '/' },
+      { nome: 'Realidade Virtual e Aumentada', data: '04/10', link: '/Aula_Realidade_Virtual_e_Aumentada_4_10.rar' },
+      { nome: '', data: '01/11', link: '/' },
     ],
     social: {
       github: '#',
@@ -61,21 +64,26 @@ function SocialIcon({ href, children, label }) {
 
 function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, imagePosition = 'left' }) {
   return (
-    <div className={`w-[35em] max-w-2xl bg-[var(--color)]/10 border border-blue-500/30 rounded-2xl shadow-lg hover:scale-105 hover:shadow-blue-500/20 duration-300 transition-all ease-in-out overflow-hidden flex ${imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
-      <div className=" relative w-2/5 max-sm:hidden">
+    <div
+      className={`bg-[var(--color)]/10 border border-blue-500/30 rounded-2xl shadow-lg hover:scale-105 hover:shadow-blue-500/20 duration-300 transition-all ease-in-out overflow-hidden flex ${
+        imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'
+      } h-full`}
+    >
+      <div className="relative w-2/5 max-sm:hidden h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-transparent z-0"></div>
-        <img 
-          src={imagem} 
-          alt={`Professor ${nome}`} 
-          draggable="false" 
-          className="px-2 relative z-10 w-full h-full object-cover" 
+        <img
+          src={imagem}
+          alt={`Professor ${nome}`}
+          draggable="false"
+          className="px-0 relative z-10 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
       </div>
-      <div className="flex flex-col p-6 w-3/5 max-sm:w-full text-left">
+
+      <div className="flex flex-col p-6 w-3/5 max-sm:w-full text-left h-full">
         <div className="max-sm:flex max-sm:items-center max-sm:gap-4">
-          <img 
-            src={thumbnail} 
+          <img
+            src={thumbnail}
             alt={`${nome} thumbnail`}
             className="hidden max-sm:block w-16 h-16 rounded-full object-cover border-2 border-blue-500/50"
           />
@@ -86,10 +94,10 @@ function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, ima
             </p>
           </div>
         </div>
-        
-        <hr className="my-4 border-gray-600" /> 
-        
-        <div id="classes" className="flex flex-col gap-y-3">
+
+        <hr className="my-4 border-gray-600" />
+
+        <div id="classes" className="scroll-mt-30 flex flex-col gap-y-3 flex-1">
           {aulas.map((aula, index) => {
             const isBlocked = !aula.link || aula.link === '/' || aula.link.trim() === '';
             const itemKey = `${nome}-${index}`;
@@ -114,24 +122,17 @@ function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, ima
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-blue-300">{aula.data}</span>
                   {isBlocked ? (
-                    <i
-                      className="bx bx-block text-blue-400 text-lg"
-                      title="Sem arquivo para download"
-                      aria-hidden="true"
-                    />
+                    <i className="bx bx-block text-blue-400 text-lg" title="Sem arquivo para download" aria-hidden="true" />
                   ) : (
-                    <i
-                      className="bx bx-download text-blue-400 text-lg"
-                      title="Baixar arquivo"
-                      aria-hidden="true"
-                    />
+                    <i className="bx bx-download text-blue-400 text-lg" title="Baixar arquivo" aria-hidden="true" />
                   )}
                 </div>
               </a>
             );
           })}
         </div>
-        <div className="mt-6 flex items-center gap-3">
+
+        <div className="mt-auto pt-4 flex items-center gap-3 border-t border-white/10">
           <SocialIcon href={social.github} label={`${nome} GitHub`}>
             <FaGithub className="text-2xl text-white" />
           </SocialIcon>
@@ -149,12 +150,14 @@ function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, ima
 
 function ClassSection() {
   return (
-    <div className="mt-50 w-full my-20 px-4 scroll-mt-40" id="professores">
+    <div className="mt-50 w-full my-20 px-4 scroll-mt-30" id="professores">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-12 text-white">
           Nossos Professores
         </h1>
-        <div className="flex flex-wrap justify-center items-stretch gap-10">
+
+        {/* grid garante alturas iguais por linha; justify-items-center mantém o mesmo layout visual */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch justify-items-center">
           {professores.map((professor, index) => (
             <ProfessorCard
               key={professor.id}
