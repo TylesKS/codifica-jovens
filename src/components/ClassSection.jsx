@@ -5,15 +5,14 @@ const professores = [
   {
     id: 1,
     nome: 'Cleber',
-    imagem: '/Professor_Placeholder.png',
-    thumbnail: '/Professor_Placeholder_Thumb.png',
+    imagem: '/Professor-Cleber.png',
+    thumbnail: '/Professor_Cleber_Thumb.png',
     cargo: 'Professor de Office: Word e Lógica de Programação',
     aulas: [
       { nome: 'Office: Word', data: '28/06', link: '/' },
-      { nome: 'Lógica de Programação', data: '19/07', link: '/' },
+      { nome: 'Lógica de Programação', data: '19/07', link: '/Logica de Programação-19-07.rar' },
       { nome: 'Lógica de Programação', data: '30/08', link: '/LogicadeProgramação30-08.rar' },
-      { nome: 'Ofice: Excel', data: '18/10', link: '' },
-      { nome: 'Ofice: Excel', data: '25/10', link: '' },
+      { nome: 'Ofice: Excel', data: '18/10 e 25/10', link: '/Office-Excel-18-10_25-10.rar' }
     ],
     social: {
       github: '#',
@@ -115,8 +114,8 @@ function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, ima
                     : 'bg-indigo-500/15 hover:bg-indigo-500/30 text-gray-200')
                 }
               >
-                <span className="flex items-center gap-3">
-                  <span>{aula.nome}</span>
+                <span className="flex items-center gap-3 ">
+                  <span classnam>{aula.nome}</span>
                 </span>
 
                 <div className="flex items-center gap-3">
@@ -152,11 +151,9 @@ function ClassSection() {
   return (
     <div className="mt-50 w-full my-20 px-4 scroll-mt-30" id="professores">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-bold text-center mb-12 text-white">
+        <h1 className="text-5xl  font-thin text-center mb-12 text-white">
           Nossos Professores
         </h1>
-
-        {/* grid garante alturas iguais por linha; justify-items-center mantém o mesmo layout visual */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch justify-items-center">
           {professores.map((professor, index) => (
             <ProfessorCard

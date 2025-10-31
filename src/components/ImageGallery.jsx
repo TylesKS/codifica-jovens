@@ -34,9 +34,9 @@ const images = [
   },
   {
     id: 6,
-    src: "",
-    alt:"",
-    credit: "",
+    src: "/Aula_Excel_25-10.jpg",
+    alt: "Foto do dia 25 de Outubro.",
+    credit: "Aula de Excel",
   }
 ];
 
@@ -82,7 +82,7 @@ function ImageGallery() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <h1 className="text-4xl font-bold mb-10 text-center">Nossa Galeria</h1>
+      <h1 className="text-4xl font-thin mb-10 text-center">Nossa Galeria</h1>
       <div className="relative rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--color)]/80">
         <div
           className="flex transition-transform duration-700 ease-in-out"
