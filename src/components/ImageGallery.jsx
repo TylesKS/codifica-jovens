@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 
 const images = [
@@ -45,6 +45,40 @@ function ImageGallery() {
   const [modalOpen, setModalOpen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
+  // --- SWIPE (novo) ---
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const didSwipe = useRef(false);
+  const SWIPE_THRESHOLD = 50; // px
+
+  const handleTouchStart = (e) => {
+    const t = e.touches[0];
+    touchStartX.current = t.clientX;
+    touchStartY.current = t.clientY;
+    didSwipe.current = false;
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = () => {};
+
+
+  const handleTouchEnd = (e) => {
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX.current;
+    const dy = t.clientY - touchStartY.current;
+
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+      didSwipe.current = true;
+      if (dx < 0) {
+        goToNextImage();
+      } else {
+        goToPreviousImage();
+      }
+    }
+
+    setIsPaused(false);
+  };
+
   const goToNextImage = useCallback(() => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, []);
@@ -83,7 +117,13 @@ function ImageGallery() {
       onMouseLeave={() => setIsPaused(false)}
     >
       <h1 className="text-4xl font-thin mb-10 text-center">Nossa Galeria</h1>
-      <div className="relative rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--color)]/80">
+
+      <div
+        className="relative rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--color)]/80 touch-pan-y" // <- adicionada touch-pan-y
+        onTouchStart={handleTouchStart} // <- novo
+        onTouchEnd={handleTouchEnd}     // <- novo
+        onTouchMove={handleTouchMove}   // <- novo
+      >
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
@@ -94,10 +134,18 @@ function ImageGallery() {
               src={image.src}
               alt={image.alt}
               className="w-full h-auto object-cover aspect-video flex-shrink-0 cursor-pointer"
-              onClick={openModal}
+              onClick={() => {
+                // evita abrir o modal quando o usuário fez swipe
+                if (didSwipe.current) {
+                  didSwipe.current = false;
+                  return;
+                }
+                openModal();
+              }}
             />
           ))}
         </div>
+
         <button
           onClick={goToPreviousImage}
           className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/60 focus:outline-none"
@@ -137,6 +185,7 @@ function ImageGallery() {
             />
           </svg>
         </button>
+
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
           {images.map((_, slideIndex) => (
             <button
@@ -151,6 +200,7 @@ function ImageGallery() {
           ))}
         </div>
       </div>
+
       {modalOpen &&
         createPortal(
           <div
