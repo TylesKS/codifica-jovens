@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const professores = [
   {
@@ -15,7 +15,7 @@ const professores = [
       { nome: 'Ofice: Excel', data: '18/10 e 25/10', link: '/Office-Excel-18-10_25-10.rar' }
     ],
     social: {
-      github: '#',
+      instagram: 'https://www.instagram.com/csrelli/',
       linkedin: 'https://www.linkedin.com/in/prof-msc-cleber-de-souza-relli-15179a42/',
       whatsapp: 'https://wa.me/554688126759',
     },
@@ -33,7 +33,7 @@ const professores = [
       { nome: '', data: '01/11', link: '/' },
     ],
     social: {
-      github: '#',
+      instagram: 'https://www.instagram.com/eduarda.maganha/',
       linkedin: 'https://www.linkedin.com/in/eduardamaganhaalmeida/',
       whatsapp: 'https://wa.me/554391921420',
     },
@@ -132,8 +132,8 @@ function ProfessorCard({ nome, imagem, thumbnail, cargo, aulas, social = {}, ima
         </div>
 
         <div className="mt-auto pt-4 flex items-center gap-3 border-t border-white/10">
-          <SocialIcon href={social.github} label={`${nome} GitHub`}>
-            <FaGithub className="text-2xl text-white" />
+          <SocialIcon href={social.instagram} label={`${nome} Instagram`}>
+            <FaInstagram className="text-2xl text-white" />
           </SocialIcon>
           <SocialIcon href={social.linkedin} label={`${nome} LinkedIn`}>
             <FaLinkedin className="text-2xl text-white" />
