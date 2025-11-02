@@ -5,51 +5,80 @@ const images = [
   {
     id: 1,
     src: "/turmainiciosetembro.jpg",
-    alt: "Foto do dia 06 de Setembro. ",
+    alt: "Foto da turma - Dia 06 de Setembro. ",
     credit: "Aula de Robótica",
   },
   {
     id: 2,
     src: "/turmalauana.jpg",
-    alt: "Selfie com a Lauana. Foto do dia 06 de Setembro. ",
+    alt: "Selfie com a Lauana - Foto do dia 06 de Setembro. ",
     credit: "Aula de Robótica",
   },
   {
     id: 3,
     src: "/Turma27-9.jpg",
-    alt: "Foto do dia 27 de Setembro.",
+    alt: "Foto da turma - Dia 27 de Setembro.",
     credit: "Aula de Realidade Virtual e Aumentada",
   },
   {
     id: 4,
-    src: "/foto-27-9-2.jpg",
-    alt: "Foto do dia 27 de Setembro.",
+    src: "/Foto-04-10.jpg",
+    alt: "Foto da turma - Dia 04 de Outubro.",
     credit: "Aula de Realidade Virtual e Aumentada",
   },
   {
     id: 5,
-    src: "/Foto-04-10.jpg",
-    alt: "Foto do dia 04 de Outubro.",
-    credit: "Aula de Realidade Virtual e Aumentada",
+    src: "/Aula_Excel_25-10.jpg",
+    alt: "Foto da turma - Dia 25 de Outubro.",
+    credit: "Aula de Excel",
   },
   {
     id: 6,
-    src: "/Aula_Excel_25-10.jpg",
-    alt: "Foto do dia 25 de Outubro.",
-    credit: "Aula de Excel",
+    src: "/Unipar1-11.jpg",
+    alt: "Foto da turma - Dia 1 de Novembro.",
+    credit: "Aula de IA generativa",
+  },
+  {
+    id: 7,
+    src: "/Aula_Celso1-11.jpg",
+    alt: "Foto da turma no laboratório de informática - Dia 1 de Novembro.",
+    credit: "Aula de IA generativa",
+  },
+  {
+    id: 8,
+    src: "/Sala_Unipar1-11.jpg",
+    alt: "Foto da turma - Dia 1 de Novembro.",
+    credit: "Aula de IA generativa",
+  },
+  {
+    id: 9,
+    src: "/Foto_Turma1-11.jpg",
+    alt: "Foto da turma - Dia 1 de Novembro.",
+    credit: "Aula de IA generativa",
+  },
+  {
+    id: 10,
+    src: "/Selfie_Turma1-11.jpg",
+    alt: "Selfie com a turma. Dia 1 de Novembro.",
+    credit: "Aula de IA generativa",
+  },
+  {
+    id: 11,
+    src: "/Placeholder.png",
+    alt: "Foto do dia (?)",
+    credit: "Aula de (?)",
   }
+
 ];
 
 function ImageGallery() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-
-  // --- SWIPE (novo) ---
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const didSwipe = useRef(false);
-  const SWIPE_THRESHOLD = 50; // px
+  const SWIPE_THRESHOLD = 50;
 
   const handleTouchStart = (e) => {
     const t = e.touches[0];
@@ -120,9 +149,9 @@ function ImageGallery() {
 
       <div
         className="relative rounded-lg overflow-hidden shadow-2xl border-2 border-[var(--color)]/80 touch-pan-y" // <- adicionada touch-pan-y
-        onTouchStart={handleTouchStart} // <- novo
-        onTouchEnd={handleTouchEnd}     // <- novo
-        onTouchMove={handleTouchMove}   // <- novo
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
       >
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -135,7 +164,6 @@ function ImageGallery() {
               alt={image.alt}
               className="w-full h-auto object-cover aspect-video flex-shrink-0 cursor-pointer"
               onClick={() => {
-                // evita abrir o modal quando o usuário fez swipe
                 if (didSwipe.current) {
                   didSwipe.current = false;
                   return;
@@ -194,7 +222,7 @@ function ImageGallery() {
               className={`h-2 w-2 rounded-full transition-colors duration-300 ${
                 currentImageIndex === slideIndex
                   ? "bg-white"
-                  : "bg-white/50 hover:bg-white"
+                  : "bg-white/60 hover:bg-white"
               }`}
             ></button>
           ))}
